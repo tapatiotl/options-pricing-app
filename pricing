@@ -5,3 +5,6 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/tapatiotl/options-pricing-app.git
 git push -u origin main
+git add requirements.txt
+git commit -m "Added requirements file"
+git push origin main
