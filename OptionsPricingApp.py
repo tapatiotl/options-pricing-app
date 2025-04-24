@@ -41,13 +41,15 @@ S = st.number_input("Stock Price (S0)", min_value=0.01, value=100.0)
 K = st.number_input("Strike Price (K)", min_value=0.01, value=110.0)
 days = st.number_input("Days to Expiration", min_value=1, value=30)
 # r = st.number_input("Risk-Free Interest Rate (as decimal, e.g., 0.050 for 5%)", min_value=0.00, value=0.050)
-r = st.number_input(
-    "Risk-Free Interest Rate (as decimal, e.g., 0.05 for 5%)",
+r_input = st.number_input(
+    "Risk-Free Interest Rate (as a percentage, e.g., 5 for 5%)",
     min_value=0.0,
-    value=0.05,
-    step=0.001,
-    format="%.3f"
+    value=5.0,
+    step=0.1,
+    format="%.2f"
 )
+r = r_input / 100  # Convert percentage to decimal
+
 sigma = st.number_input("Volatility (as decimal, e.g., 0.2 for 20%)", min_value=0.01, value=0.2)
 q = st.number_input("Dividend Yield (as decimal, e.g., 0.03 for 3%)", min_value=0.0, value=0.0)
 
